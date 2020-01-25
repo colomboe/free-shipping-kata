@@ -6,7 +6,6 @@ import assertk.assertThat
 import assertk.assertions.containsOnly
 import assertk.assertions.isEqualTo
 import assertk.assertions.isInstanceOf
-import org.junit.Ignore
 import org.junit.Test
 
 /*
@@ -42,14 +41,12 @@ class EligibilityTest {
             ))
 
     @Test
-    @Ignore
     fun `order eligible`() {
         val eligibilityResult = isEligible(eligibleOrder)
         assertThat(eligibilityResult).isEqualTo(Eligible)
     }
 
     @Test
-    @Ignore
     fun `order not eligible due to shipment country`() {
 
         val order = eligibleOrder.copy(
@@ -62,7 +59,6 @@ class EligibilityTest {
     }
 
     @Test
-    @Ignore
     fun `order not eligible due to low total price`() {
 
         val order = eligibleOrder.copy(
@@ -75,7 +71,6 @@ class EligibilityTest {
     }
 
     @Test
-    @Ignore
     fun `order not eligible due to both low total price and shipment country`() {
 
         val order = eligibleOrder.copy(
@@ -91,7 +86,6 @@ class EligibilityTest {
     }
 
     @Test
-    @Ignore
     fun `order not eligible due product constraints not satisfied`() {
 
         val order = eligibleOrder.copy(
@@ -106,7 +100,6 @@ class EligibilityTest {
     }
 
     @Test
-    @Ignore
     fun `order not eligible due to ALL constraints not satisfied`() {
 
         val order = eligibleOrder.copy(
@@ -124,7 +117,7 @@ class EligibilityTest {
                 "Bad total products")(eligibilityResult)
     }
 
-    fun assertNotEligibleForReasons(vararg reasons: String) = { result: EligibilityResult ->
+    fun assertNotEligibleForReasons(vararg reasons: String) = { result: EligibilityResult<String> ->
         assertThat(result).isInstanceOf(NotEligible::class)
                 .transform { it.reasons }
                 .containsOnly(*reasons)
