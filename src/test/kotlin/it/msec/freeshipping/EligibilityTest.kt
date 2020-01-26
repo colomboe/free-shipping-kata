@@ -96,7 +96,7 @@ class EligibilityTest {
 
         assertNotEligibleForReasons(
                 "Bad distinct products",
-                "Bad total products")(eligibilityResult)
+                "Bad items count")(eligibilityResult)
     }
 
     @Test
@@ -114,7 +114,7 @@ class EligibilityTest {
                 "Bad country",
                 "Bad total price",
                 "Bad distinct products",
-                "Bad total products")(eligibilityResult)
+                "Bad items count")(eligibilityResult)
     }
 
     fun assertNotEligibleForReasons(vararg reasons: String) = { result: EligibilityResult<String> ->
