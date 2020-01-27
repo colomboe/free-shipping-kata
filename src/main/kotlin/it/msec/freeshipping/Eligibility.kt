@@ -27,26 +27,3 @@ val isEligible = (
                 and `total price is at least 100 EUR`
                 and (`contains at least 5 items` or `contains at least 2 distinct products`)
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
