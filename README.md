@@ -5,7 +5,7 @@ free shipping. In order to be eligible for free shipping, ALL of the following c
 
   - Shipment is to Italy or Spain
 
-  - Total price should be at least 100 EUR
+  - Total price must be at least 100 EUR
 
   - Order contains at least 2 distinct product codes or a total of 5 items (even with the same code)
 
